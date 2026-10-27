@@ -1,0 +1,87 @@
+{
+  "api": 1,
+  "id": "zhhhugochang.jying",
+  "name": "聚影",
+  "version": "1.0.0",
+  "min_mv_version": "3.13.0",
+  "author": "ZhhHugoChang",
+  "description": "使用个人 API Key 搜索聚影的公开影片资源，并支持每日签到。",
+  "release_notes": "首个版本：支持影片关键词、TMDB 编号搜索，返回 Muvyo 可接收的网盘分享，并提供账号签到状态和每日签到任务。",
+  "permissions": {
+    "domains": [
+      "www.jying.top"
+    ]
+  },
+  "config": [
+    {
+      "key": "api_key",
+      "label": "个人 API Key",
+      "type": "secret",
+      "required": true,
+      "help": "在聚影个人首页验证邮箱后查看或重置；只使用个人 Key，不需要 AppID。"
+    },
+    {
+      "key": "max_movies",
+      "label": "最多匹配影片",
+      "type": "number",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "部",
+      "default": "5",
+      "help": "每次搜索最多读取多少部候选影片的资源。数量越大，请求越多。"
+    }
+  ],
+  "settings": {
+    "description": "填写聚影个人 API Key。插件只读取公开影片及有效资源；自动签到需在下方定时任务里另行开启。",
+    "links": [
+      {
+        "title": "获取 API Key",
+        "url": "https://www.jying.top/profile?section=integration"
+      },
+      {
+        "title": "API 使用说明",
+        "url": "https://www.jying.top/api-developer-guide#personal-access"
+      }
+    ],
+    "sections": [
+      {
+        "title": "接入",
+        "fields": [
+          "api_key",
+          "max_movies"
+        ]
+      }
+    ]
+  },
+  "capabilities": {
+    "search": {
+      "link_types": [
+        "115",
+        "123pan",
+        "baidupan",
+        "guangyapan",
+        "aliyundrive",
+        "cloud189",
+        "magnet",
+        "ed2k"
+      ],
+      "supports_tmdb": true,
+      "resolve": false,
+      "resolve_cost": "none"
+    },
+    "tasks": [
+      {
+        "id": "checkin",
+        "title": "每日签到",
+        "description": "使用个人 API Key 为本人签到；当天已签到时不会重复领取。",
+        "kind": "checkin",
+        "interval_minutes": 1440,
+        "retries": 1
+      }
+    ],
+    "account": {
+      "title": "聚影账号"
+    }
+  }
+}

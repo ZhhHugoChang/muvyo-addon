@@ -1,0 +1,4 @@
+# Signed artifacts are byte-sensitive. Never normalize their line endings.
+index.json -text
+index.json.sig -text
+plugins/** -text

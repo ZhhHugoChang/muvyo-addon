@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "certificate": {
+  "certificate": {
+   "aud": "mediavault-addon-author",
+   "version": 1,
+   "serial": 22,
+   "author_id": "gh-30371886",
+   "author": "ZhhHugoChang",
+   "namespace": "zhhhugochang",
+   "public_key": "F3g0aYeh6qRAljPVekNgdRixJUR3hPEFFqnD+7030Ec=",
+   "issued_at": 1793120635,
+   "expires_at": 1824656635,
+   "content_key": "dZG/JEC97Q7rkuvPik4E94585D2Q/Vr5CzbTvuBZ4TE=",
+   "content_key_version": 1,
+   "installation_key": "r9GhtEZYvlUMnIyyE20HozdsAoHXGzHxCheF5SRulto="
+  },
+  "signature": "8NhF/L7bFQaBi36SiCTdCTic/aaGS3tPAmDx8QkuIUG78Y7bflwlVE+I2c4/ynJtR/dRpGJmDy/Y5NM5dV3BDg=="
+ },
+ "payload": {
+  "plugin_id": "zhhhugochang.jying",
+  "version": "1.0.0",
+  "files": {
+   "README.md": "357fd0aeeb188a169026134b8419f98e036c98e3333da41fd787ee12338b3375",
+   "encrypted.json": "ee31a7cb9d95030cf816943348000dfdb3851ba7fa5b7ff52adefc5d4a508f54",
+   "manifest.json": "4821cea55670cdf96eb7ee2343da17d0032feac242f2a81c255674093d8cedb1"
+  }
+ },
+ "signature": "7wTNCE0G3rtONgEoH++poZy12JTavVHPAeAQ5uvoDPYy8hxAxRKm+D7rc7MfCGdTE9Ap0QgQGMz4ZiIGav7pBg=="
+}
