@@ -19,12 +19,12 @@
  },
  "payload": {
   "plugin_id": "zhhhugochang.jying",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "files": {
-   "README.md": "357fd0aeeb188a169026134b8419f98e036c98e3333da41fd787ee12338b3375",
-   "encrypted.json": "ee31a7cb9d95030cf816943348000dfdb3851ba7fa5b7ff52adefc5d4a508f54",
-   "manifest.json": "4821cea55670cdf96eb7ee2343da17d0032feac242f2a81c255674093d8cedb1"
+   "README.md": "982f8b487d3adec80630140cc7ce0fb71ed10eaa35567a8178a3b0b89fdb9e70",
+   "encrypted.json": "9ed44d1afff41cffe59dde9cf94fd1ffa90aa1d09fca1ccbe0b463da2e074d35",
+   "manifest.json": "cbbcf15473ec8ca620389c2f0120397bdcef594f4f840ebe9202a868f8164fe3"
   }
  },
- "signature": "7wTNCE0G3rtONgEoH++poZy12JTavVHPAeAQ5uvoDPYy8hxAxRKm+D7rc7MfCGdTE9Ap0QgQGMz4ZiIGav7pBg=="
+ "signature": "9m0zZsfALSum+KT+o1x9elUuGuD5ho34SzVaf91BtaesXeLzITzloPswD/4LBbqJrnBs9NCdIrFRtBHUBePMBg=="
 }

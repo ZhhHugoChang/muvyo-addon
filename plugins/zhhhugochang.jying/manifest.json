@@ -2,11 +2,11 @@
   "api": 1,
   "id": "zhhhugochang.jying",
   "name": "聚影",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "min_mv_version": "3.13.0",
   "author": "ZhhHugoChang",
-  "description": "使用个人 API Key 搜索聚影的公开影片资源，并支持每日签到。",
-  "release_notes": "首个版本：支持影片关键词、TMDB 编号搜索，返回 Muvyo 可接收的网盘分享，并提供账号签到状态和每日签到任务。",
+  "description": "支持个人 API Key 或 AppID + 个人 Key 搜索聚影资源，并提供安全限流与每日签到。",
+  "release_notes": "新增可选 AppID 接入和聚合搜索；保留仅个人 Key 模式。按官方规则实施独立限流、3 分钟聚合缓存、429 Retry-After 冷却和 AppID 绑定冲突提示。",
   "permissions": {
     "domains": [
       "www.jying.top"
@@ -18,7 +18,14 @@
       "label": "个人 API Key",
       "type": "secret",
       "required": true,
-      "help": "在聚影个人首页验证邮箱后查看或重置；只使用个人 Key，不需要 AppID。"
+      "help": "在聚影个人首页验证邮箱后查看或重置。无论是否使用 AppID，都必须填写用户自己的 Key。"
+    },
+    {
+      "key": "app_id",
+      "label": "AppID（可选）",
+      "type": "secret",
+      "required": false,
+      "help": "留空时使用个人只读 API；填写有效 AppID 后使用开发接口和聚合搜索。不要填写他人的 AppID。"
     },
     {
       "key": "max_movies",
@@ -33,7 +40,7 @@
     }
   ],
   "settings": {
-    "description": "填写聚影个人 API Key。插件只读取公开影片及有效资源；自动签到需在下方定时任务里另行开启。",
+    "description": "个人使用只填 API Key；已获批开发应用时再填写 AppID。插件会自动选择接口并遵守对应限流。",
     "links": [
       {
         "title": "获取 API Key",
@@ -49,6 +56,7 @@
         "title": "接入",
         "fields": [
           "api_key",
+          "app_id",
           "max_movies"
         ]
       }
@@ -74,7 +82,7 @@
       {
         "id": "checkin",
         "title": "每日签到",
-        "description": "使用个人 API Key 为本人签到；当天已签到时不会重复领取。",
+        "description": "使用当前配置的个人身份为本人签到；当天已签到时不会重复领取。",
         "kind": "checkin",
         "interval_minutes": 1440,
         "retries": 1

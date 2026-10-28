@@ -1,16 +1,16 @@
 {
-  "name": "ZhhHugoChang 的插件",
-  "sequence": 1,
-  "plugins": [
-    {
-      "id": "zhhhugochang.jying",
-      "name": "聚影",
-      "version": "1.0.0",
-      "description": "使用个人 API Key 搜索聚影的公开影片资源，并支持每日签到。",
-      "author": "ZhhHugoChang",
-      "path": "plugins/zhhhugochang.jying",
-      "api": 1
-    }
-  ],
-  "public_key": "ZoJqRY/+8jMG/jA+lyqeEHkHxjBdBsxDd4HydC7XLDM="
+ "name": "ZhhHugoChang 的插件",
+ "sequence": 2,
+ "plugins": [
+  {
+   "id": "zhhhugochang.jying",
+   "name": "聚影",
+   "version": "1.1.0",
+   "description": "支持个人 API Key 或 AppID + 个人 Key 搜索聚影资源，并提供安全限流与每日签到。",
+   "author": "ZhhHugoChang",
+   "path": "plugins/zhhhugochang.jying",
+   "api": 1
+  }
+ ],
+ "public_key": "ZoJqRY/+8jMG/jA+lyqeEHkHxjBdBsxDd4HydC7XLDM="
 }
